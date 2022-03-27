@@ -1,0 +1,25 @@
+
+app:
+  name: lead_generation_basic
+  version: 0.0.1
+  prefix: lgb
+  dev: true
+
+http:
+  address: :8080
+
+sqldb:
+  host: localhost
+  port: 5432
+  user: postgres
+  password: password
+  dbname: postgres
+
+nosqldb:
+  user: mongo
+  password: password
+  host: localhost
+  port: 27017
+  direct_conn: true
+  server_timeout_ms: 360
+  retry_writes: false

@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  sbeg-postgres:
+    image: bitnami/postgresql
+    container_name: sbeg-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./sql/migration/01-sample.sql:/docker-entrypoint-initdb.d/01-sample.sql
+
+  sbeg-mongo:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - "$HOME/docker/volumes/sbeg/mongo:/data/db"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongo
+      - MONGO_INITDB_ROOT_PASSWORD=password
