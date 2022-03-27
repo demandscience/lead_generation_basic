@@ -1,2 +1,2 @@
-# lead_generation_basic
+# Lead generation basic
 Basic service for lead generation
